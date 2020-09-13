@@ -67,7 +67,7 @@ $vaultNumber = "01"
 $vaultName = "rsv" + $writeSeperator + $customerName + $writeSeperator + $hub + $writeSeperator + $vaultNumber
 $storageRedundancyLRS = "LocallyRedundant"
 $storageRedundancyGRS = "GeoRedundant"
-$rgBackupInstanRecoveryName= "rg" + $writeSeperator + $customerName + $writeSeperator + $hub + $writeSeperator + "backup" + $writeSeperator + "irp" + $writeSeperator + "0" 
+$rgBackupInstantRecoveryName= "rg" + $writeSeperator + $customerName + $writeSeperator + $hub + $writeSeperator + "backup" + $writeSeperator + "irp" + $writeSeperator + "0" 
 
 $tagCostCenter = "it"
 $tagBusinessCriticality1 = "critical"
@@ -121,7 +121,7 @@ Write-Host ($writeEmptyLine + "# Redundancy for " + $vaultName + " set to " + $b
 Get-AzRecoveryServicesVault -Name $vaultName | Set-AzRecoveryServicesVaultContext
 
 $bkpPol = Get-AzRecoveryServicesBackupProtectionPolicy -name "DefaultPolicy"
-$bkpPol.AzureBackupRGName= $rgBackupInstanRecoveryName
+$bkpPol.AzureBackupRGName= $rgBackupInstantRecoveryName
 
 Set-AzRecoveryServicesBackupProtectionPolicy -policy $bkpPol
 
