@@ -121,7 +121,7 @@ Write-Host ($writeEmptyLine + "# Redundancy for " + $vaultName + " set to " + $b
 Get-AzRecoveryServicesVault -Name $vaultName | Set-AzRecoveryServicesVaultContext
 
 $bkpPol = Get-AzRecoveryServicesBackupProtectionPolicy -name "DefaultPolicy"
-$bkpPol.AzureBackupRGName= $rgBackupInstantRecoveryName
+$bkpPol.AzureBackupRGName = $rgBackupInstantRecoveryName
 
 Set-AzRecoveryServicesBackupProtectionPolicy -policy $bkpPol
 
