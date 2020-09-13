@@ -67,6 +67,7 @@ $vaultNumber = "01"
 $vaultName = "rsv" + $writeSeperator + $customerName + $writeSeperator + $hub + $writeSeperator + $vaultNumber
 $storageRedundancyLRS = "LocallyRedundant"
 $storageRedundancyGRS = "GeoRedundant"
+$rgBackupInstanRecoveryName= "rg" + $writeSeperator + $customerName + $writeSeperator + $hub + $writeSeperator + "backup" + $writeSeperator + "irp" + $writeSeperator + "0" 
 
 $tagCostCenter = "it"
 $tagBusinessCriticality1 = "critical"
@@ -83,7 +84,7 @@ Register-AzResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
 
 ## ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Create the resource group
+# Create resource group for the Recovery Services vault
 
 New-AzResourceGroup -Name $rgBackupHub -Location $location `
 -Tag @{env=$hub;costCenter=$tagCostCenter;businessCriticality=$tagBusinessCriticality1;applicationName=$tagBackup;region=$location}
@@ -115,4 +116,16 @@ Write-Host ($writeEmptyLine + "# Redundancy for " + $vaultName + " set to " + $b
 
 ## ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## Set resource group for storing instant recovery points of managed virtual machines (for the DefaultPolicy)
 
+Get-AzRecoveryServicesVault -Name $vaultName | Set-AzRecoveryServicesVaultContext
+
+$bkpPol = Get-AzRecoveryServicesBackupProtectionPolicy -name "DefaultPolicy"
+$bkpPol.AzureBackupRGName= $rgBackupInstanRecoveryName
+
+Set-AzRecoveryServicesBackupProtectionPolicy -policy $bkpPol
+
+Write-Host ($writeEmptyLine + "# Instant recovery points resource group set for the DefaultPolicy " + $writeSeperatorSpaces + $currentTime)`
+-foregroundcolor $foregroundColor1 $writeEmptyLine
+
+## ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
