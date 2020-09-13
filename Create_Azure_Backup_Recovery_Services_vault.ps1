@@ -5,7 +5,8 @@ A script used to create an Azure Backup Recovery Services vault.
 
 .DESCRIPTION
 
-A script used to create an Azure Backup Recovery Services vault in a resource group. When the Recovery Services vault is created with the necessary resource tags, the storage redundancy type will be set.
+A script used to create an Azure Backup Recovery Services vault in a resource group. When the Recovery Services vault is created with the necessary resource tags, the storage redundancy type will be set. 
+Also the resource group for storing instant recovery points of managed virtual machines for the DefaultPolicy will be set.
 
 .NOTES
 
