@@ -66,6 +66,19 @@ $writeSeperatorSpaces = " - "
 
 ## ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## Check if running as Administrator, otherwise close the PowerShell window
+ 
+$CurrentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
+$IsAdministrator = $CurrentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+if ($IsAdministrator -eq $false) {
+    Write-Host ($writeEmptyLine + "# Please run PowerShell as Administrator" + $writeSeperator + $currentTime)`
+    -foregroundcolor $foregroundColor1 $writeEmptyLine
+    Start-Sleep -s 5
+    exit
+}
+  
+## ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Download started
 
 Write-Host ($writeEmptyLine + "# MABS v3 download started" + $writeSeperatorSpaces + $currentTime)`
