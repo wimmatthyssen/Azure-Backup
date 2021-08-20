@@ -1,4 +1,4 @@
-# Azure_Backup
+# Azure-Backup
 
 This repository contains the ARM Templates and scripts used in different Azure Backup scenarios. 🚀
 
