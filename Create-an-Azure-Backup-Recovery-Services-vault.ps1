@@ -10,7 +10,7 @@ Also the resource group for storing instant recovery points of managed virtual m
 
 .NOTES
 
-Filename:       Create_Azure_Backup_Recovery_Services_vault.ps1
+Filename:       Create-an-Azure-Backup-Recovery-Services-vault.ps1
 Created:        11/09/2020
 Last modified:  11/09/2020
 Author:         Wim Matthyssen
@@ -21,7 +21,7 @@ Disclaimer:     This script is provided "As IS" with no warranties.
 
 .EXAMPLE
 
-.\Create_Azure_Backup_Recovery_Services_vault.ps1
+.\Create-an-Azure-Backup-Recovery-Services-vault.ps1
 
 .LINK
 
