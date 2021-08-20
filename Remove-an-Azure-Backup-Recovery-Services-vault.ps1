@@ -12,7 +12,7 @@ Afterwards the resource groups holding the Recovery Services vault and the one u
 
 .NOTES
 
-Filename:       Remove_an_Azure_Backup_Recovery_Services_vault.ps1
+Filename:       Remove-an-Azure-Backup-Recovery-Services-vault.ps1
 Created:        17/11/2020
 Last modified:  17/11/2020
 Author:         Wim Matthyssen
@@ -23,7 +23,7 @@ Disclaimer:     This script is provided "As IS" with no warranties.
 
 .EXAMPLE
 
-.\Remove_an_Azure_Backup_Recovery_Services_vault.ps1
+.\Remove-an-Azure-Backup-Recovery-Services-vault.ps1
 
 .LINK
 
