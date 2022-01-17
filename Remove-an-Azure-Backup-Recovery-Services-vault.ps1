@@ -19,7 +19,7 @@ Created:        17/11/2020
 Last modified:  19/10/2021
 Author:         Wim Matthyssen
 PowerShell:     Azure PowerShell or Azure Cloud Shell
-Version:        Install latest Azure Powershell modules 
+Version:        Install latest Azure PowerShell modules 
 Action:         Change variables where needed to fit your needs
 Disclaimer:     This script is provided "As Is" with no warranties.
 
@@ -36,13 +36,9 @@ https://wmatthyssen.com/2020/11/17/azure-backup-remove-a-recovery-services-vault
 
 ## Variables
 
-$customerName ="myh"
-$spoke = "hub"
-$purpose = "backup"
-
-$rgBackup = "rg" + "-" + $spoke + "-" + $customerName + "-" + $purpose
-$rgBackupInstanRecovery = "rg" + "-" + $spoke + "-" + $customerName + "-" + $purpose + "irp" + "-" + "01"
-$vaultName = "rsv" + $writeSeperator + $customerName + $writeSeperator + $spoke + $writeSeperator + "01"
+$rgBackup = #<your Recovery Services vault rg here> The Azure resource group in which the Recovery Services vault is stored. Example: "rg-hub-myh-backup"
+$rgBackupInstanRecovery = #<your Instant restore rg here> The Azure resource group in which the instant recovery snapshots are stored. Example: "rg-hub-myh-backup-irp-01"
+$vaultName = #<your Recovery Services vault name here> The name of the recovery Service vault resource you want to delete. Example: "rsv-bck-hub-myh-weu-01"
 $vault = Get-AzRecoveryServicesVault -ResourceGroupName $rgBackup -Name $vaultName
 
 $global:currenttime= Set-PSBreakpoint -Variable currenttime -Mode Read -Action {$global:currenttime= Get-Date -UFormat "%A %m/%d/%Y %R"}
