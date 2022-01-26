@@ -4,7 +4,8 @@ This repository contains Azure PowerShell and PowerShell scripts used to perform
 
 You can find more information about these scripts on my blog: https://wmatthyssen.com
 
-Currenently this repository holds the following PowerShell scritps:
+
+Currenently this repository holds the following scritps:
 
 - **Configure-WindowsDefenderAntivirus-Antivirus-Exclusions-MicrosoftAzureBackupServerv3.ps1**
 
@@ -14,4 +15,4 @@ Currenently this repository holds the following PowerShell scritps:
 
 - **Delete-an-Azure-Backup-Recovery-Services-vault.ps1**
 
-  More information about the Delete an Azure Backup Recovery Services vault script can be found on my blog: https://wmatthyssen.com/2020/11/17/azure-backup-remove-a-recovery-        services-vault-and-all-cloud-backup-items-with-azure-powershell/
+  More information about the Delete an Azure Backup Recovery Services vault script can be found on my blog: https://wmatthyssen.com/2020/11/17/azure-backup-remove-a-recovery-services-vault-and-all-cloud-backup-items-with-azure-powershell/
