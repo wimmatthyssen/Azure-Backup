@@ -18,7 +18,8 @@ Update the required registry entries with the path of the newly moved scratch fo
 Restart the Backup engine.
 Remove the original scratch folder and all its data.
 
-You can follow all required steps in the following blog post: 
+You can follow all required steps in the following blog post:
+https://wmatthyssen.com/2022/05/11/azure-backup-change-the-location-of-the-mars-agent-cache-scratch-folder-to-another-disk-on-a-windows-server/
 
 .NOTES
 
