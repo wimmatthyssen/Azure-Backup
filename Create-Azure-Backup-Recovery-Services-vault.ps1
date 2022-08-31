@@ -43,6 +43,7 @@ Set-AzContext -Subscription "<SubscriptionName>" (if not using the default subsc
 
 .LINK
 
+https://wmatthyssen.com/2022/08/31/azure-backup-create-a-recovery-services-vault-with-azure-powershell/
 #>
 
 ## ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
