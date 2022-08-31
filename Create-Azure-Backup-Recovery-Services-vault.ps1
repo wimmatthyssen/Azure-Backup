@@ -29,7 +29,7 @@ Last modified:  31/08/2022
 Author:         Wim Matthyssen
 Version:        2.0
 PowerShell:     Azure PowerShell and Cloud Shell
-Requires:       PowerShell Az (v8.2.0)
+Requires:       PowerShell Az (v8.1.0) and Az.RecoveryServices (v5.4.1)
 Action:         Change variables were needed to fit your needs
 Disclaimer:     This script is provided "As Is" with no warranties.
 
