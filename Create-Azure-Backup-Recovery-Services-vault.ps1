@@ -60,6 +60,7 @@ $rgNameBackupIrp = #<your Recovery Services vault instant restore resource group
 $logAnalyticsWorkSpaceName = #<your Log Analytics workspace name here> The name of your existing Log Analytics workspace. Example: "law-hub-myh-01"
 $vaultName = #<your Recovery Services vault name here> The name for the Recovery Services vault here. Example: "rsv-hub-myh-we-01"
 $backupStorageRedundancy = "LocallyRedundant" # "GeoRedundant" (GRS) - "ZoneRedundant" (ZRS)
+$vaultDiagnosticsName = #<your Recovery Services vault Diagnostics settings name here> The name of the Recovery settings diagnostic settings. Example: "diag-rsv-hub-myh-we-01"
 
 $tagSpokeName = #<your environment tag name here> The environment tag name you want to use. Example:"Env"
 $tagSpokeValue = (Get-Culture).TextInfo.ToTitleCase($spoke.ToLower())
@@ -222,9 +223,9 @@ Write-Host ($writeEmptyLine + "# Backup storage redundancy set to $backupStorage
 ## Set the diagnostic settings (log and metrics) for the Recovery Services vault if they don't exist
 
 try {
-    Get-AzDiagnosticSetting -Name $vaultName -ResourceId ($vault.Id) -ErrorAction Stop | Out-Null
+    Get-AzDiagnosticSetting -Name $vaultDiagnosticsName -ResourceId ($vault.Id) -ErrorAction Stop | Out-Null
 } catch {    
-    Set-AzDiagnosticSetting -Name $vaultName -ResourceId ($vault.Id) `
+    Set-AzDiagnosticSetting -Name $vaultDiagnosticsName -ResourceId ($vault.Id) `
     -Category AzureBackupReport,CoreAzureBackup,AddonAzureBackupJobs,AddonAzureBackupAlerts,AddonAzureBackupPolicy,AddonAzureBackupStorage,AddonAzureBackupProtectedInstance `
     -MetricCategory Health -Enabled $true -WorkspaceId ($workSpace.ResourceId) | Out-Null
 }
