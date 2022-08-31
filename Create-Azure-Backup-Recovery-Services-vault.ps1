@@ -18,7 +18,7 @@ Create a resource group backup, if it not already exists. Add specified tags and
 Create a resource group backup irp, if it not already exists. Add specified tags and do not add a resource lock.
 Create the Recovery Services vault if it does not exist.
 Set specified tags on the Recovery Services vault.
-Specify the type of backup storage redundancy for the Recovery Services vault (can be modified only if there are no backup items protected in the vault).
+Specify the type of backup storage redundancy for the Recovery Services vault (can only be modified if there are no backup items protected in the vault). Adjust the variable if required.
 Set the diagnostic settings (log and metrics) for the Recovery Services vault if they don't exist.
 
 .NOTES
@@ -58,8 +58,7 @@ $rgNameBackupIrp = #<your Recovery Services vault instant restore resource group
 
 $logAnalyticsWorkSpaceName = #<your Log Analytics workspace name here> The name of your existing Log Analytics workspace. Example: "law-hub-myh-01"
 $vaultName = #<your Recovery Services vault name here> The name for the Recovery Services vault here. Example: "rsv-hub-myh-we-01"
-$storageRedundancyLRS = "LocallyRedundant"
-#$storageRedundancyGRS = "GeoRedundant"
+$backupStorageRedundancy = "LocallyRedundant" # "GeoRedundant" (GRS) - "ZoneRedundant" (ZRS)
 
 $tagSpokeName = #<your environment tag name here> The environment tag name you want to use. Example:"Env"
 $tagSpokeValue = (Get-Culture).TextInfo.ToTitleCase($spoke.ToLower())
@@ -212,9 +211,6 @@ Write-Host ($writeEmptyLine + "# Tags Recovery Services vault $vaultName set" + 
 
 ## Specify the type of backup storage redundancy for the Recovery Services vault (can be modified only if there are no backup items protected in the vault)
 
-$backupStorageRedundancy = $storageRedundancyLRS
-
-# Set backup storage redundancy for the vault
 Set-AzRecoveryServicesBackupProperty -Vault $vault -BackupStorageRedundancy $backupStorageRedundancy
 
 Write-Host ($writeEmptyLine + "# Backup storage redundancy set to $backupStorageRedundancy" + $writeSeperatorSpaces + $currentTime)`
