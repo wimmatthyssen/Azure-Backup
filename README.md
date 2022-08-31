@@ -7,12 +7,11 @@ You can find more information about these scripts on my blog: https://wmatthysse
 
 Currently this repository holds the following scritps:
 
-- **Configure-WindowsDefenderAntivirus-Antivirus-Exclusions-MicrosoftAzureBackupServerv3.ps1**
-
-  More information about this script used to create an Azure Backup Recovery Services vault to backup different workloads in an Azure subscription can be found on my blog: https://wmatthyssen.com/2021/02/04/microsoft-azure-backup-server-mabs-antivirus-exclusions/
-  
-
 - **Create-Azure-Backup-Recovery-Services-vault.ps1**
+
+  More information about this script used to create an Azure Backup Recovery Services vault to backup different workloads in an Azure subscription can be found on my blog: https://wmatthyssen.com/2022/08/31/azure-backup-create-a-recovery-services-vault-with-azure-powershell/
+
+- **Configure-WindowsDefenderAntivirus-Antivirus-Exclusions-MicrosoftAzureBackupServerv3.ps1**
 
   More information about the Microsoft Azure Backup Server (MABS) v3: Antivirus Exclusions script can be found on my blog: https://wmatthyssen.com/2021/02/04/microsoft-azure-backup-server-mabs-antivirus-exclusions/
   
