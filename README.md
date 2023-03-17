@@ -27,4 +27,4 @@ Currently this repository holds the following scritps:
    
   - **Modify-Azure-VM-Backup-all-disks.ps1**
 
-   More information about this script to modify the protection of an Azure IaaS VM backup of a specific VM to backup all disks can be found on my blog: https://wmatthyssen.com/2023/03/17/azure-spring-clean-2023-lets-optimize-your-azure-backup-costsazure-spring-clean-2023/
+    More information about this script to modify the protection of an Azure IaaS VM backup of a specific VM to backup all disks can be found on my blog: https://wmatthyssen.com/2023/03/17/azure-spring-clean-2023-lets-optimize-your-azure-backup-costsazure-spring-clean-2023/
