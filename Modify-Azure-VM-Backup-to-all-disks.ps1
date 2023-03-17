@@ -36,7 +36,7 @@ Set-AzContext -Subscription "<SubscriptionName>" (set to subscription holding th
 
 .LINK
 
-
+https://wmatthyssen.com/2023/03/17/azure-spring-clean-2023-lets-optimize-your-azure-backup-costsazure-spring-clean-2023/
 #>
 
 ## ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
