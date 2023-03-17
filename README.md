@@ -20,3 +20,7 @@ Currently this repository holds the following scritps:
 - **Delete-an-Azure-Backup-Recovery-Services-vault.ps1**
 
   More information about the Delete an Azure Backup Recovery Services vault script can be found on my blog: https://wmatthyssen.com/2020/11/17/azure-backup-remove-a-recovery-services-vault-and-all-cloud-backup-items-with-azure-powershell/
+  
+  - **Modify-Azure-VM-Backup-to-OS-disk-only.ps1**
+
+  More information about this script to modify the protection of an Azure IaaS VM backup of a specific VM to only backup the OS disk can be found on my blog: https://wmatthyssen.com/2023/03/17/azure-spring-clean-2023-lets-optimize-your-azure-backup-costsazure-spring-clean-2023/
